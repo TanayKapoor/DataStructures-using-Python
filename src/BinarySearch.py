@@ -1,19 +1,18 @@
-def binary_search(iplist, number):
+def binary_search(arr, num):
     low = 0
-    high = len(iplist) - 1
+    high = len(arr) - 1
 
     while low <= high:
         mid = (low + high)
-        guess = iplist[mid]
-        if guess == number:
+        guess = arr[mid]
+        if num == guess:
             return mid
-        if guess > number:
+        if num < guess:
             high = high - 1
         else:
             low = low + 1
     return None
 
 
-my_list = [2, 4, 6, 8, 10]
-print(binary_search(my_list, 6))
-print(binary_search(my_list, 1))
+test = [1, 2, 3, 4, 5, 6]
+print(binary_search(test, 4))
